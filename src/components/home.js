@@ -6,6 +6,8 @@ import OnChangeForm from '../projects/onchange_form';
 import CarCRUD from '../projects/real_crud';
 import UpdateState from '../projects/update_obj';
 import UpdateProduct from '../projects/update_product';
+import ToDoList from '../projects/todolist';
+import DarkMode from '../projects/darkmode';
 function Home(props){
     const loggedIn = <h2 className='bg-green-400 rounded-md p-3 w-auto text-white'>
                         Welcome {props.username}
@@ -30,6 +32,10 @@ function Home(props){
                 <UpdateProduct />
                 <h1 className='mt-8 md:ml-4 translate-x-5 p-2 text-white w-24 bg-slate-400 border-r-8 rounded-sm'>Project6</h1>
                 <CarCRUD />
+                <h1 className='mt-8 md:ml-4 translate-x-5 p-2 text-white w-24 bg-slate-400 border-r-8 rounded-sm'>Project7</h1>
+                <ToDoList />
+                <h1 className='mt-8 md:ml-4 translate-x-5 p-2 text-white w-24 bg-slate-400 border-r-8 rounded-sm'>Project8</h1>
+                <DarkMode />
             </div>
         </>
     );
