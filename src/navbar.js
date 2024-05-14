@@ -21,9 +21,9 @@ const NavBar = () =>{
                         <Link to={"/contact"}>
                             <li className="m-5 hover:scale-105 hover:opacity-85">Contact</li>
                         </Link>
-                        <Link to={"/service"}>
+                        {/* <Link to={"/service"}>
                             <li className="m-5 hover:scale-105 hover:opacity-85">Services</li>
-                        </Link>
+                        </Link> */}
                     </ul>
                 </nav>
                 <i class="ri-menu-2-fill text-white m-4 text-2xl sm:hidden block cursor-pointer hover:opacity-80"></i>

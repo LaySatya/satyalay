@@ -5,6 +5,7 @@ import CounterProgram from '../projects/counter_program';
 import DarkMode from '../projects/darkmode';
 import OnChangeForm from '../projects/onchange_form';
 import CarCRUD from '../projects/real_crud';
+import RegistrationForm from '../projects/register_form';
 import SearchFilter from '../projects/search_filter';
 import TemperatureControl from '../projects/temperature';
 import ToDoList from '../projects/todolist';
@@ -42,6 +43,8 @@ function Home(props){
                 <TemperatureControl />
                 <h1 className='mt-8 md:ml-4 translate-x-5 p-2 text-white w-24 bg-slate-400 border-r-8 rounded-sm'>Project10</h1>
                 <SearchFilter />
+                <h1 className='mt-8 md:ml-4 translate-x-5 p-2 text-white w-24 bg-slate-400 border-r-8 rounded-sm'>Project11</h1>
+                <RegistrationForm />
             </div>
         </>
     );

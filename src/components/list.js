@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 function List(props){
+    alert(props)
     const itemLists = props.items;
     const listItems = itemLists.map(item => 
                                         <li key={item.id}>

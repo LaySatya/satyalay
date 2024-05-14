@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 function SearchFilter() {
-    const [players, setPlayers] = useState([
+    const [search , setSearch] = useState("");
+    const [players , setPlayers] = useState([ 
         {
             id: 1,
             name: "Lionel Messi",
@@ -30,19 +31,14 @@ function SearchFilter() {
         {
             id: 6,
             name: "Nick Talor",
-            club: "Preah Khan Reach SvayRieng",
+            club: "Preah Khan Reach Svay Rieng FC",
             country: "Cambodia",
         },
     ]);
-    function filter(e){
-        const search  = e.target.value;
-        if(search === ""){
-            return players;
-        }
-        else{
-            setPlayers(players.filter((player) => player.name.toLowerCase().includes(search.toLowerCase())));
-        }
-    }
+    function filter(e) {
+        const searchPlayers = e.target.value;
+        setSearch(searchPlayers);
+}
 
     return (
         <div className="mt-12 w-[95%] rounded-lg bg-slate-50 mx-auto">
@@ -56,7 +52,7 @@ function SearchFilter() {
                     />
                 </div>
                 <div className="flex justify-center">
-                    <div class="relative overflow-x-auto">
+                    <div class="relative overflow-x-auto md:w-10/12">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
@@ -77,13 +73,20 @@ function SearchFilter() {
                             <tbody>
                                 {   
 
-                                    players.map((player , index) => (
-                                        <tr key={player.id} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                            <td class="px-6 py-4 text-md">{player.id}</td>
-                                            <td class="px-6 py-4 text-md">{player.name}</td>
-                                            <td class="px-6 py-4 text-md">{player.club}</td>
-                                            <td class="px-6 py-4 text-md">{player.country}</td>
-                                        </tr>
+                                    players.filter((player , index) => {
+                                        if(search === ""){
+                                            return player;
+                                        }
+                                        else if(player.name.toLowerCase().includes(search.toLowerCase())) {
+                                            return player;
+                                        }
+                                    }).map((p , i) => (
+                                          <tr key={p.id} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <td class="px-6 py-4 text-md">{p.id}</td>
+                                                <td class="px-6 py-4 text-md">{p.name}</td>
+                                                <td class="px-6 py-4 text-md">{p.club}</td>
+                                                <td class="px-6 py-4 text-md">{p.country}</td>
+                                            </tr>
                                     ))
                                 }
                             </tbody>
